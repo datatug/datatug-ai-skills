@@ -1,6 +1,6 @@
 # DataTug AI Plugin
 
-AI plugin for [DataTug](https://datatug.app) — skills that teach AI agents how to use the `datatug` CLI for data exploration, dataset management, schema scanning, and query execution.
+AI plugin for [DataTug](https://datatug.io) — skills that teach AI agents how to use the `datatug` CLI for data exploration, dataset management, schema scanning, and query execution.
 
 This repository contains the plugin source. It is installed on top of the [`datatug` CLI](https://github.com/datatug/datatug-cli); the CLI is a prerequisite.
 
