@@ -1,12 +1,21 @@
 # datatug datasets
 
-List and manage datasets in the current DataTug project.
+List datasets in a DataTug project.
 
 ## Command
 
 ```bash
-datatug datasets [subcommand]
+datatug datasets -p <project>
 ```
+
+## Parameters
+
+| Flag | Required | Description |
+|---|---|---|
+| `-p`, `--project <name>` | Yes* | Project to list datasets from. |
+| `-d`, `--directory <path>` | Yes* | Alternative to `-p`: path to the project directory. |
+
+\* Provide **either** `-p` or `-d`.
 
 ## When to use
 
@@ -14,5 +23,5 @@ datatug datasets [subcommand]
 
 ## Notes
 
-- Run `datatug datasets --help` for the authoritative subcommand list.
 - Read-only.
+- Run `datatug datasets --help` for the authoritative flag list.

@@ -1,12 +1,21 @@
 # datatug queries — list
 
-List saved queries in the current DataTug project.
+List saved queries in a DataTug project.
 
 ## Command
 
 ```bash
-datatug queries
+datatug queries -p <project>
 ```
+
+## Parameters
+
+| Flag | Required | Description |
+|---|---|---|
+| `-p`, `--project <name>` | Yes* | Project to list queries from. |
+| `-d`, `--directory <path>` | Yes* | Alternative to `-p`: path to the project directory. |
+
+\* Provide **either** `-p` or `-d`.
 
 ## When to use
 
@@ -14,5 +23,5 @@ datatug queries
 
 ## Notes
 
-- Read-only.
-- Run `datatug queries --help` for the authoritative subcommand and flag list.
+- Read-only. `datatug queries` with no subcommand lists the queries.
+- Run `datatug queries --help` for the authoritative flag list.

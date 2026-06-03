@@ -1,6 +1,6 @@
 ---
 name: init
-description: Create a new DataTug project — scaffolds the project file layout in the current directory or a specified path. Use when starting a new data exploration project.
+description: Create a new DataTug project — scaffolds the project file layout at a specified path. Use when starting a new data exploration project.
 user-invocable: true
 ---
 
@@ -19,14 +19,24 @@ On miss, invoke `/datatug:install` and stop until `datatug --help` succeeds.
 ## Command
 
 ```bash
-datatug init
+datatug init <projectId> <projectPath>
 ```
+
+Both arguments are **required positional arguments**:
+
+| Argument | Description |
+|---|---|
+| `projectId` | Short id used to reference the project later (e.g. with `-p <projectId>`). |
+| `projectPath` | Directory in which to create the project. Created if it does not exist. |
+
+A bare `datatug init` (no arguments) will not work.
 
 ## When to use
 
-- Bootstrapping a new DataTug project (queries, dashboards, pipelines, settings) at the current directory.
+- Bootstrapping a new DataTug project skeleton at the given path.
 
 ## Notes
 
-- Creates the standard DataTug project layout (`datatug-project.yaml` and supporting directories).
-- After init, register data sources with [`scan`](../scan/SKILL.md) and define datasets with [`datasets`](../datasets/SKILL.md).
+- Creates a `datatug/` directory under `<projectPath>`; the project summary is stored as `datatug-project.json`. Errors if the target already contains a `datatug` project.
+- Run `datatug init --help` for the authoritative argument list.
+- After init, register the project with [`projects add`](../projects/references/add.md), add data sources with [`scan`](../scan/SKILL.md), and define datasets with [`datasets`](../datasets/SKILL.md).

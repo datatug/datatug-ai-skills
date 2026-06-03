@@ -19,8 +19,10 @@ On miss, invoke `/datatug:install` and stop.
 ## Command
 
 ```bash
-datatug validate
+datatug validate -p <project>
 ```
+
+Select the project with `-p <name>` (or `-d <path>`). `--dir`/`-d` also scopes which directory is validated.
 
 ## When to use
 
@@ -31,4 +33,5 @@ datatug validate
 ## Notes
 
 - A non-zero exit means at least one validation failed — surface the message verbatim.
+- Run `datatug validate --help` for the authoritative flag list.
 - Pair with [`scan`](../scan/SKILL.md) in CI: scan, then validate.

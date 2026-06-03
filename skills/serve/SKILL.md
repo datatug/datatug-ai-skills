@@ -30,4 +30,5 @@ datatug serve
 ## Notes
 
 - Long-running process. Exits on `SIGINT` / `SIGTERM`.
-- Run `datatug serve --help` for the authoritative flag list (port, host, project selection, TLS).
+- Default port is **8989**.
+- Run `datatug serve --help` for the authoritative flag list. (Note: `--help` on the current CLI shows no additional flags beyond `--help`; host/TLS/port options are not confirmed to be wired yet.)
