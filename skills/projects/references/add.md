@@ -5,12 +5,15 @@ Register a DataTug project on this machine (in `~/.datatug.yaml`) so it can be r
 ## Command
 
 ```bash
-datatug projects add
+datatug projects add -p <project-id> -d <path-to-project-directory>
 ```
 
-The command is intended to register a project by **name and directory**.
+## Parameters
 
-> ⚠️ **Known limitation (as of CLI v0.x):** `datatug projects add` does not currently accept the name/directory as arguments — the inputs are unwired, so it cannot register a project from the command line yet. Track: <https://github.com/datatug/datatug-cli/issues/137>. Until it's fixed, add the project entry to `~/.datatug.yaml` manually (an `id` + `path` pair under `projects`).
+| Flag | Required | Description |
+|---|---|---|
+| `-p`, `--project <id>` | Yes | Id/name to register the project under (used later as `-p <id>`). |
+| `-d`, `--directory <path>` | Yes | Local path to the project directory. |
 
 ## When to use
 
@@ -19,4 +22,5 @@ The command is intended to register a project by **name and directory**.
 
 ## Notes
 
-- Run `datatug projects add --help` for the authoritative argument list once the command is fixed.
+- Writes the entry to `~/.datatug.yaml`; the project is then resolvable by `-p <id>` in other commands.
+- Run `datatug projects add --help` for the authoritative flag list.

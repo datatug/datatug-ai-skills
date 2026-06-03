@@ -36,5 +36,6 @@ There is **no `--source` flag** — the source is specified by the connection fl
 
 - Run `datatug scan --help` for the authoritative flag list.
 - Writes to project metadata files — commit the diff to version-control the schema snapshot.
+- A `--server`/`-s` host is required; pass it explicitly.
 
-> ⚠️ **Known limitation (as of CLI v0.x):** `scan` is partially unimplemented — it panics (`not implemented yet`) when no server/host is supplied and for the `sqlite3` driver. Treat scan as work-in-progress until fixed. Track: <https://github.com/datatug/datatug-cli/issues/136>.
+> ℹ️ **Not yet implemented:** scanning `sqlite3` databases, and deriving the server/host from the project's environment config (omitting `-s/--server`). These now return a clear error (they no longer panic — fixed in [datatug-cli#138](https://github.com/datatug/datatug-cli/pull/138)). Use a `sqlserver` source with an explicit `-s/--server` for now.
