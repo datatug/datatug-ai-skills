@@ -44,6 +44,6 @@ There is **no `--source` flag** — the source is specified by the connection fl
 ## Notes
 
 - Run `datatug scan --help` for the authoritative flag list.
-- Writes the schema (tables, columns, types, primary keys) to `dbmodels/<id>.dbmodel.json` plus the project/environment files — commit the diff to version-control the schema snapshot.
-- **SQLite** is supported via `-D sqlite3 --path <file>` (fixed in [datatug-cli#139](https://github.com/datatug/datatug-cli/pull/139); on-disk persistence in [#140](https://github.com/datatug/datatug-cli/pull/140)). SQLite requires a CGO build of the CLI (e.g. `go install`), so prebuilt `CGO_ENABLED=0` release binaries do not include it.
-- **Not yet captured for SQLite:** indexes, foreign keys, and constraints (tables, columns and primary keys are). Deriving a SQL Server host from the project's environment config (omitting `-s/--server`) is also not yet implemented and returns a clear error.
+- Writes the schema — tables, columns, types, primary keys, **foreign keys, indexes, unique constraints, and reverse references** — to `dbmodels/<id>.dbmodel.json` plus the project/environment files. Commit the diff to version-control the schema snapshot.
+- **SQLite** is supported via `-D sqlite3 --path <file>` (datatug-cli [#139](https://github.com/datatug/datatug-cli/pull/139) scan, [#140](https://github.com/datatug/datatug-cli/pull/140) persistence, [#141](https://github.com/datatug/datatug-cli/pull/141) indexes/FKs/constraints). SQLite requires a CGO build of the CLI (e.g. `go install`), so prebuilt `CGO_ENABLED=0` release binaries do not include it.
+- Deriving a SQL Server host from the project's environment config (omitting `-s/--server`) is not yet implemented and returns a clear error.
