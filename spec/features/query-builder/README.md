@@ -1,7 +1,7 @@
 # Feature: Query Builder Skill
 
 > [SpecScore.**Studio**](https://specscore.studio): | [Explore](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=explore) | [Edit](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=edit) | [Ask question](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=ask) | [Request change](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=request-change) |
-**Status:** Under Review
+**Status:** Approved
 **Date:** 2026-06-05
 **Owner:** alexander.trakhimenok
 **Source Ideas:** —
@@ -145,6 +145,7 @@ Each AC is an observable agent behavior (which tools are called, with what paylo
 
 - Should the skill be `user-invocable` (a `/datatug:query-builder` command) in addition to being model-invoked, and under what name?
 - Should the skill auto-start `datatug serve` (with the builder) when it is not running, or only instruct the user to start it?
+- How should the agent detect that the dalgo AST cannot express a request (REQ:choose-mode) — attempt DTQL and fall back to native on failure, or consult a daemon capability response — so the DTQL→native decision is consistent rather than a pure guess?
 
 ---
 *This document follows the https://specscore.md/feature-specification*
