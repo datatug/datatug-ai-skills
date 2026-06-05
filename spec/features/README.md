@@ -6,7 +6,7 @@ Feature specifications for this project.
 
 | Feature | Status | Description |
 |---------|--------|-------------|
-| [query-builder](query-builder/README.md) | Approved | TODO: Add description. |
+| [query-builder](query-builder/README.md) | Under Review | TODO: Add description. |
 
 ## Open Questions
 
