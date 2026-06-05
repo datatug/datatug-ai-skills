@@ -32,6 +32,7 @@ This plugin follows the same design as the sibling [`specscore`](https://github.
 | [`queries/`](queries/SKILL.md) | `datatug queries` | `list`, `run` |
 | [`validate/`](validate/SKILL.md) | `datatug validate` | inline |
 | [`serve/`](serve/SKILL.md) | `datatug serve` | inline |
+| [`query-builder/`](query-builder/SKILL.md) | `datatug serve` (MCP query builder) | inline |
 
 ## Pre-flight pattern
 
