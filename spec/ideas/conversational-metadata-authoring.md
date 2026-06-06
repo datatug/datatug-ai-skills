@@ -11,7 +11,7 @@
 How might we let a user (and an AI assisting them) describe their data's meaning in plain language — "in table U, column PC is the user's primary currency" — and reliably capture it as structured, validatable datatug entity/table/column metadata that downstream tooling can reuse?
 
 ## Context
-The `datatug` plugin in `datatug-ai-skills` today ships only CLI-wrapper skills (`init`, `validate`, `projects`, `datasets`, `queries`, `scan`, `serve`, `install`). They expose what the CLI can already do; none of them help a user *define the meaning* of their data.
+The `datatug` plugin in `ai-plugin` today ships only CLI-wrapper skills (`init`, `validate`, `projects`, `datasets`, `queries`, `scan`, `serve`, `install`). They expose what the CLI can already do; none of them help a user *define the meaning* of their data.
 
 The datatug data model, however, already has the bones for semantic metadata:
 - `entities/<Name>/<Name>.entity.json` is a first-class artifact. The Go model (`datatug-core/pkg/datatug/entities.go`) defines `Entity{ Fields, Tables }`, `EntityField{ id, type, title, isKeyField, NamePatterns }`, and `EntityFieldRef{ Entity, Field }`.
@@ -64,16 +64,16 @@ A two-to-three-week spike that nails one job: **turn a plain-language statement 
 | Might-be-true | Scan-derived `NamePatterns` can auto-suggest field mappings well enough to make the seeded draft genuinely useful. | Run scan on a demo DB and inspect how many columns get plausible field suggestions. |
 
 ## SpecScore Integration
-- **New Features this would create:** (1) entity/semantic **authoring CLI verbs** in `datatug-cli`; (2) an **NL semantic-authoring skill** in `datatug-ai-skills` that wraps them; (3) a **read-back skill** that renders current semantic metadata.
+- **New Features this would create:** (1) entity/semantic **authoring CLI verbs** in `datatug-cli`; (2) an **NL semantic-authoring skill** in `ai-plugin` that wraps them; (3) a **read-back skill** that renders current semantic metadata.
 - **Existing Features affected:** existing CLI-wrapper skills (`cli-` prefix rename); `scan` (becomes the seed source for initial drafts); the datatug-core data model (a **new dedicated mapping artifact** + its schema/validation, rather than altering scanned-column or entity structures).
-- **Dependencies:** sequencing is deliberate — this skills Idea is defined **first** and is the source of truth for designing the CLI verb surface. A CLI Idea/Feature is then derived from it in `datatug-cli` (already spec-managed) and implemented; the skills Features (here in `datatug-ai-skills`) are built on top once the verbs land.
+- **Dependencies:** sequencing is deliberate — this skills Idea is defined **first** and is the source of truth for designing the CLI verb surface. A CLI Idea/Feature is then derived from it in `datatug-cli` (already spec-managed) and implemented; the skills Features (here in `ai-plugin`) are built on top once the verbs land.
 
 ## Open Questions
 - What is the on-disk layout and scoping of the dedicated mapping artifact (one per database? one per project?), and how are its keys qualified (database/catalog/schema + table) so identically-named tables don't collide?
 - The mapping is the source of truth and entities carry a **derived copy** (validated by `datatug validate`). Residual: when/how the copy regenerates, how it is marked generated so it is never hand-edited, and whether recordset-column `Meta` and `Entity.Tables` become derived from the mapping or deprecated (so there are not two competing pattern/link systems).
 - What is the exact CLI verb surface and naming (`entity` vs `entities`, subcommand shapes)?
 - How is a "currency code" represented — new known type, namePattern-constrained String, or `extends` to an ISO currency definition?
-- Should `datatug-ai-skills` itself be brought under specscore management (`specscore init`) so these Idea/Feature artifacts lint, or remain a plain repo?
+- Should `ai-plugin` itself be brought under specscore management (`specscore init`) so these Idea/Feature artifacts lint, or remain a plain repo?
 
 ---
 *This document follows the https://specscore.md/idea-specification*

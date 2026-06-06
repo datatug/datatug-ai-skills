@@ -1,6 +1,6 @@
 # Feature: Query Builder Skill
 
-> [SpecScore.**Studio**](https://specscore.studio): | [Explore](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=explore) | [Edit](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=edit) | [Ask question](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=ask) | [Request change](https://specscore.studio/app/github.com/datatug/datatug-ai-skills/spec/features/query-builder?op=request-change) |
+> [SpecScore.**Studio**](https://specscore.studio): | [Explore](https://specscore.studio/app/github.com/datatug/ai-plugin/spec/features/query-builder?op=explore) | [Edit](https://specscore.studio/app/github.com/datatug/ai-plugin/spec/features/query-builder?op=edit) | [Ask question](https://specscore.studio/app/github.com/datatug/ai-plugin/spec/features/query-builder?op=ask) | [Request change](https://specscore.studio/app/github.com/datatug/ai-plugin/spec/features/query-builder?op=request-change) |
 **Status:** Approved
 **Date:** 2026-06-05
 **Owner:** alexander.trakhimenok
