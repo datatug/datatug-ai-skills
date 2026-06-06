@@ -1,0 +1,46 @@
+{
+  "name": "datatug",
+  "version": "0.0.1",
+  "description": "DataTug CLI plugin: skills that teach AI agents how to use the datatug CLI for data exploration, dataset management, schema scanning, and query execution.",
+  "author": {
+    "name": "DataTug",
+    "url": "https://datatug.io"
+  },
+  "homepage": "https://github.com/datatug/ai-plugin",
+  "repository": "https://github.com/datatug/ai-plugin",
+  "license": "MIT",
+  "keywords": [
+    "datatug",
+    "data",
+    "datasets",
+    "sql",
+    "query",
+    "schema",
+    "cli",
+    "ai-coding",
+    "codex",
+    "codex-plugin",
+    "agent-skills",
+    "engineering",
+    "development"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "DataTug",
+    "shortDescription": "DataTug CLI skills for Codex.",
+    "longDescription": "DataTug teaches Codex how to use the datatug CLI for data exploration, dataset management, schema scanning, and query execution.",
+    "developerName": "DataTug",
+    "category": "Developer Tools",
+    "capabilities": [
+      "CLI",
+      "Workflow"
+    ],
+    "websiteURL": "https://github.com/datatug/ai-plugin",
+    "defaultPrompt": [
+      "List DataTug projects.",
+      "Scan this database's schema.",
+      "Run a DataTug query."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
